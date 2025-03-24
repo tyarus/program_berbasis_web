@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fruity</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-light">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary shadow-lg">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#" onclick="showHome()">
+                Fruity
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="showHome()">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" onclick="showContact()">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="home" class="container py-5">
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg">
+                    <img alt="A slice of lemon on a green background" class="card-img-top" src="lemon.webp"/>
+                    <div class="card-body">
+                        <h5 class="card-title">the lord Lemon</h5>
+                        <p class="card-text text-muted">bagus | March 16, 2025</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit officiis pariatur ex delectus ea nostrum unde omnis.</p>
+                        <a class="btn btn-primary" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg">
+                    <img alt="A bunch of bananas on a yellow background" class="card-img-top" src="baananh.png"/>
+                    <div class="card-body">
+                        <h5 class="card-title">just Banana</h5>
+                        <p class="card-text text-muted">bagus | March 16, 2025</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit officiis pariatur ex delectus ea nostrum unde omnis.</p>
+                        <a class="btn btn-primary" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg">
+                    <img alt="Slices of watermelon on a green background" class="card-img-top" src="wateh melun.webp"/>
+                    <div class="card-body">
+                        <h5 class="card-title"> Watermelon</h5>
+                        <p class="card-text text-muted">bagus | March 16, 2025</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit officiis pariatur ex delectus ea nostrum unde omnis.</p>
+                        <a class="btn btn-primary" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="container py-5 d-none">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <h2 class="card-title text-primary mb-4">Contact Me</h2>
+                <p class="card-text mb-4">If you need help, please contact us via the form below</p>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control" id="email" placeholder="Enter your email" type="email"/>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="first-name">First Name</label>
+                            <input class="form-control" id="first-name" placeholder="Enter Name" type="text"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="last-name">Last Name</label>
+                            <input class="form-control" id="last-name" placeholder="Enter Name" type="text"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" placeholder="Enter your message" rows="4"></textarea>
+                    </div>
+                    <div class="form-group form-check">
+                        <input class="form-check-input" type="checkbox"/>
+                        <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+                    </div>
+                    <button class="btn btn-primary" type="button" onclick="sendMessage()">Send</button>
+                </form>
+                <div id="notification" class="alert alert-success mt-4 d-none" role="alert">
+                    Message has been sent!
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showHome() {
+            document.getElementById('home').classList.remove('d-none');
+            document.getElementById('contact').classList.add('d-none');
+        }
+
+        function showContact() {
+            document.getElementById('home').classList.add('d-none');
+            document.getElementById('contact').classList.remove('d-none');
+        }
+
+        function sendMessage() {
+            
+            document.getElementById('notification').classList.remove('d-none');
+            
+            
+            document.querySelector('form').reset();
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

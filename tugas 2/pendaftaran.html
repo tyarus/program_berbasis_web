@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+   <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Pendaftaran Mahasiswa Baru</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link rel="stylesheet" href="pendaftaran.css">
+            <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        </head>
+        <body class="flex items-center justify-center min-h-screen py-10">
+            <div class="w-full max-w-2xl p-8 pixel-border">
+                <h1 class="mb-8 text-2xl font-bold text-center">Pendaftaran Mahasiswa Baru</h1>
+                <form id="registrationForm">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="mb-4 col-span-2">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="npm">NPM (Nomor Pokok Mahasiswa)</label>
+                            <input class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="npm" type="number" placeholder="NPM" required>
+                        </div>
+                        <div class="mb-4 col-span-2">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="nama">Nama Lengkap</label>
+                            <input class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="nama" type="text" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="mb-4 col-span-2">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="alamat">Alamat</label>
+                            <textarea class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="alamat" placeholder="Alamat" required></textarea>
+                        </div>
+                        <div class="mb-4 col-span-2">
+                            <label class="block mb-2 text-sm font-bold text-gray-700">Jenis Kelamin</label>
+                            <div class="flex items-center mb-2">
+                                <input class="mr-2 leading-tight" type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-Laki" required>
+                                <label class="text-sm text-gray-700" for="laki-laki">Laki-Laki</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input class="mr-2 leading-tight" type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+                                <label class="text-sm text-gray-700" for="perempuan">Perempuan</label>
+                            </div>
+                        </div>
+                        <div class="mb-6 col-span-2">
+                            <label class="block mb-2 text-sm font-bold text-gray-700" for="program_studi">Program Studi</label>
+                            <select class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="program_studi" required>
+                                <option value="sistem informasi">sistem informasi</option>
+                                <option value="Teknik Informatika">Teknik Informatika</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center justify-between col-span-2">
+                            <button id="submitButton" class="pixel-button" type="submit">
+                                Tambah
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script>
+                document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    const form = event.target;
+                    const isValid = form.checkValidity();
+                    const submitButton = document.getElementById('submitButton');
+                    if (isValid) {
+                        submitButton.classList.remove('disabled');
+                        alert('Form submitted successfully!');
+                    } else {
+                        submitButton.classList.add('disabled');
+                        alert('Please fill out all required fields.');
+                    }
+                });
+        
+                document.getElementById('submitButton').addEventListener('click', function() {
+                    this.classList.add('disabled');
+                });
+            </script>
+        </body>
+        </html>
