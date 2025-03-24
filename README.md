@@ -1,3 +1,3 @@
-#permograman berbasis web 
-Nama :Bagus Satya Ramadhan
-NPM  : 2310631250087
+permograman berbasis web   
+Nama :Bagus Satya Ramadhan   
+NPM  : 2310631250087   
